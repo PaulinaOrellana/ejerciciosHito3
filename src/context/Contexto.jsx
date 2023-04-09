@@ -6,6 +6,8 @@ export const ContextoProvider = (props) => {
 
     const [usuario, setUsuario] = useState({});
 
+    const [lstProductos, setLstProductos] = useState([]);
+
     const lstUsuarios = [
         {
             email:'leonardo@gmail.com', 
@@ -26,7 +28,7 @@ export const ContextoProvider = (props) => {
     ]
 
   return ( 
-    <Contexto.Provider value={{lstUsuarios, usuario, setUsuario}}>
+    <Contexto.Provider value={{lstUsuarios, usuario, setUsuario, setLstProductos, lstProductos}}>
         {props.children}
 
     </Contexto.Provider>

@@ -6,11 +6,11 @@ import Contexto from '../context/Contexto';
 
 const Homeprivado = () => {
 
-    const { setConectado } = useContext(Contexto);
+    const { usuario, setUsuario } = useContext(Contexto);
     const navigate =  useNavigate();
 
     const cerrarApp = () =>{
-        setConectado(false);
+        setUsuario({conectado: false, nombre: ''});
         navigate('/');
     }
 
@@ -19,9 +19,10 @@ const Homeprivado = () => {
         <div style={{display: ' flex', justifyContent:'space-between'}}>
     <NavLink to="/publicar">Publicar</NavLink>
     <NavLink to="/perfil">Perfil</NavLink>
-    <button type="button" onClick={() => cerrarApp()}>Salir</button>
     </div>
-    <div>este es home privado</div>
+    <strong>{usuario.email}</strong>
+    <button type="button" onClick={() => cerrarApp()}>Salir</button>
+   
     </div>
     
   )

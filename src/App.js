@@ -1,4 +1,4 @@
-import Contexto, { ContextoProvider } from './context/Contexto'; 
+import Contexto from './context/Contexto'; 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useContext } from 'react';
 import Login from "./views/Login.jsx";
@@ -12,7 +12,7 @@ import Publicar from './views/Publicar.jsx';
 
 function App() {
 
-  const { conectado } = useContext(Contexto);
+  const { usuario } = useContext(Contexto);
   
   return (
    
@@ -22,7 +22,7 @@ function App() {
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="/login" element={<Login></Login>}></Route>
 
-            {conectado &&
+            {usuario.conectado &&
             <> 
             <Route path="/homeprivado" element={<Homeprivado></Homeprivado>}></Route>
             <Route path="/detalle" element={<Detalle></Detalle>}></Route>

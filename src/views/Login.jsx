@@ -7,7 +7,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const { lstUsuarios, setConectado } = useContext(Contexto);
+    const { lstUsuarios, setUsuario } = useContext(Contexto);
     const navigate = useNavigate();
 
     const validarUsuario = () => {
@@ -16,11 +16,11 @@ const Login = () => {
 
 
       if (usuarioValido) {
-            setConectado(true);
+            setUsuario({conectado: true, email: usuarioValido.email});
             navigate('/homeprivado'); 
 
       } else { 
-        setConectado(false);
+       
         alert('usuario invalido')
       }
     }

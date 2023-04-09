@@ -4,11 +4,11 @@ export const Contexto = createContext ({});
 
 export const ContextoProvider = (props) => {
 
-    const [conectado, setConectado] = useState(false);
+    const [usuario, setUsuario] = useState({});
 
     const lstUsuarios = [
         {
-            email:'leonardo@gmail.com',
+            email:'leonardo@gmail.com', 
             clave: '12345'
         },
         {
@@ -26,7 +26,7 @@ export const ContextoProvider = (props) => {
     ]
 
   return ( 
-    <Contexto.Provider value={{lstUsuarios, setConectado, conectado}}>
+    <Contexto.Provider value={{lstUsuarios, usuario, setUsuario}}>
         {props.children}
 
     </Contexto.Provider>

@@ -8,6 +8,7 @@ import Home from './views/Home.jsx';
 import Detalle from './views/Detalle.jsx';
 import Perfil from './views/Perfil.jsx';
 import Publicar from './views/Publicar.jsx';
+import Registro from './views/Registro';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="/login" element={<Login></Login>}></Route>
+            <Route path="/registro" element={<Registro></Registro>}></Route>
 
             {usuario.conectado &&
             <> 
